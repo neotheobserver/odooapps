@@ -15,7 +15,7 @@
 
     'depends': ['base', 'web'],
 
-    'images': ['static/description/icon.jpg'],
+    'images': ['static/description/icon.png'],
 
     'assets': {
         'web.assets_backend': [
