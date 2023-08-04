@@ -5,6 +5,7 @@
     'author': "Ardent Sharma",
     'category': 'Project',
     'version': '16.0',
+    'license': 'LGPL-3',
     'depends': ['base', 'project'],
     'images': ['static/description/banner.png'],
     'data': [
