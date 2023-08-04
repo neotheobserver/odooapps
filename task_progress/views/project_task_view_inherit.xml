@@ -1,0 +1,31 @@
+<odoo>
+
+    <!-- inherited fields to include the nepali datep as well as sdg goal and tasks -->
+    <record id="project_task_view_form_inherit_mapping" model="ir.ui.view">
+        <field name="name">project.task.view.form.inherit.mapping</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_ids']" position="after">
+                 <field name="weight"/>
+                <field name="has_child" invisible="1"/>
+                <field name="is_completed" attrs="{'invisible': [('has_child', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                 <field name="development" widget="progressbar" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+
+
+        <record id="task_view_kanban_progress_inherit" model="ir.ui.view">
+        <field name="name">project.view.kanban.progress.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="/kanban/templates/t/div/div" position="inside">
+                <field name="development" widget="progressbar"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
